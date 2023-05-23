@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getPokemonList } from "../../services/api-calls";
+import { Link } from "react-router-dom";
 
 const PokemonList = () => {
 
@@ -20,9 +21,11 @@ const PokemonList = () => {
         <h3>Pokeomon List</h3>
         <div className="icon-container">
           {pokemon.map(pokemonTitle => 
-            <div className="class-div" key={pokemonTitle.index}>
-              {pokemonTitle.name.toUpperCase()}
-            </div>
+            <Link>
+              <div className="class-div" key={pokemonTitle.index}>
+                {pokemonTitle.name.toUpperCase()}
+              </div>
+            </Link>
           )}
         </div>
       </div>
