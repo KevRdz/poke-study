@@ -5,3 +5,8 @@ export async function getPokemonList() {
   console.log(res);
   return res.json()
 }
+
+export async function getDetails(apiUrl) {
+  const res = await fetch(`${baseUrl}${apiUrl}`)
+  return res.json()
+}
