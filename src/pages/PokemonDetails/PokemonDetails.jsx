@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { getDetails } from "../../services/api-calls";
 
 const PokemonDetails = () => {
-  const [pokemonDetails, setPokemonDetails] = useState({})
+  const [pokemonDetails, setPokemonDetails] = useState([])
   const location = useLocation()
 
   useEffect(() => {
@@ -22,8 +22,12 @@ const PokemonDetails = () => {
         {pokemonDetails.name ? 
         <>
           <h2>{pokemonDetails.name.toUpperCase()}</h2>
-          {pokemonDetails.moves.map((move) => (
-            <div key={move.index}>{move.name}</div>
+          <img src="http://theoldreader.com/kittens/320/240/" alt=""/>
+          <p>Weight: {(pokemonDetails.weight / 4.536).toFixed()}lbs</p>
+          <p>Height: {(pokemonDetails.height / 3.048).toFixed(2)}ft</p>
+          <h3>Abilities:</h3>
+          {pokemonDetails.abilities.map((abilityObj) => (
+            <div key={abilityObj.ability.name}>{abilityObj.ability.name}</div>
           ))}
         </>
         :
