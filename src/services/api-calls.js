@@ -9,3 +9,8 @@ export async function getDetails(apiUrl) {
   const res = await fetch(`${baseUrl}${apiUrl}`)
   return res.json()
 }
+
+export async function getItemList() {
+  const res = await fetch(`${baseUrl}/api/v2/item?offset=20&limit=20`)
+  return res.json()
+}

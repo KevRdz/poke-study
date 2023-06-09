@@ -28,19 +28,19 @@ const PokemonDetails = () => {
           <p>Height: {(pokemonDetails.height / 3.048).toFixed(2)}ft</p>
           <h3>Abilities:</h3>
           {pokemonDetails.abilities.map((abilityObj) => (
-            <div key={abilityObj.ability.name}>{abilityObj.ability.name}</div>
+            <div key={abilityObj.ability.name}>{abilityObj.ability.name.toUpperCase()}</div>
           ))}
           <h3>Types:</h3>
           {pokemonDetails.types.map((typeObj) => (
-            <div key={typeObj.type.name}>{typeObj.type.name}</div>
+            <div key={typeObj.type.name}>{typeObj.type.name.toUpperCase()}</div>
           ))}
           <h3>Base Stats:</h3>
           {pokemonDetails.stats.map((stat) => (
-            <div key={stat.base_stat}>{stat.base_stat} - {stat.stat.name}</div>
+            <div key={stat.base_stat}>{stat.base_stat} - {stat.stat.name.toUpperCase()}</div>
           ))}
           <h3>Moves:</h3>
           {pokemonDetails.moves.map((moveObj) => (
-            <div key={moveObj.move.name}>{moveObj.move.name}</div>
+            <div key={moveObj.move.name}>{moveObj.move.name.toUpperCase()}</div>
           ))}
         </>
         :
