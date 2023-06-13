@@ -11,6 +11,6 @@ export async function getDetails(apiUrl) {
 }
 
 export async function getItemList() {
-  const res = await fetch(`${baseUrl}/api/v2/item?offset=20&limit=20`)
+  const res = await fetch(`${baseUrl}/api/v2/item?offset=20&limit=2050`)
   return res.json()
 }
