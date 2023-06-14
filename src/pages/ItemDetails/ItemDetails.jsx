@@ -10,7 +10,7 @@ const ItemDetails = () => {
   useEffect(() => {
     const fetchDetails = async () => {
       const itemDetails = await getDetails(location.state.item.url.slice(18))
-      console.log(location.state.item.url);
+      console.log(itemDetails);
       setItemDetails(itemDetails)
     }
     fetchDetails()
@@ -18,9 +18,24 @@ const ItemDetails = () => {
 
   return (
     <>
-      <h3>Item Details</h3>
-      <img src="http://theoldreader.com/kittens/320/240/" alt=""/>
-      <h3>{itemDetails.name}</h3>
+      <div>
+        {itemDetails.name ? 
+        <>
+          <h3>Item Details</h3>
+          <h3>{itemDetails.name?.toUpperCase()}</h3>
+          <img src="http://theoldreader.com/kittens/320/240/" alt=""/>
+          <h4>Cost: {itemDetails.cost}P</h4>
+          <h3>Effect:</h3>
+          {itemDetails.effect_entries?.map((effectObj) => (
+            <div key={effectObj.effect}>{effectObj.effect}</div>
+          ))}
+        </>
+        :
+        <>
+          <p>Loading Item Details...</p>
+        </>
+        }
+      </div>
     </>
   );
 }

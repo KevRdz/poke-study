@@ -7,7 +7,6 @@ const PokemonDetails = () => {
   const location = useLocation()
 
   useEffect(() => {
-    // console.log(location.state.pokemonTitle.url.slice(18));
     const fetchDetails = async () => {
       const pokemonDetails = await getDetails(location.state.pokemonTitle.url.slice(18))
       console.log(pokemonDetails);

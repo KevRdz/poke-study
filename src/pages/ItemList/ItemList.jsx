@@ -19,12 +19,14 @@ const ItemList = () => {
       <h3>Item List</h3>
       {itemList.length ? 
       <>
-        {itemList.map(item =>
-          <div key={item.index}>
-            <Link to="/item" state={{item}}>{item.name}</Link>
-            <br />
-          </div>
-        )}
+        <div className="icon-container">
+          {itemList.map(item =>
+            <div className="pokemon-div" key={item.index}>
+              <Link to="/item" state={{item}}>{item.name.toUpperCase()}</Link>
+              {/* <br /> */}
+            </div>
+          )}
+        </div>
       </>
       :
       <>
