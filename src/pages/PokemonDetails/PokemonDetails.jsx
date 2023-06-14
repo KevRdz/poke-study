@@ -22,7 +22,7 @@ const PokemonDetails = () => {
         <>
           <h2>{pokemonDetails.name.toUpperCase()}</h2>
           <h3>Pokedex Entry - {pokemonDetails.order}</h3>
-          <img src="http://theoldreader.com/kittens/320/240/" alt=""/>
+          <img className="pokemon-img" src={pokemonDetails.sprites.front_default} alt="pokemon-sprite" />
           <p>Weight: {(pokemonDetails.weight / 4.536).toFixed()}lbs</p>
           <p>Height: {(pokemonDetails.height / 3.048).toFixed(2)}ft</p>
           <h3>Abilities:</h3>
@@ -35,7 +35,7 @@ const PokemonDetails = () => {
           ))}
           <h3>Base Stats:</h3>
           {pokemonDetails.stats.map((stat) => (
-            <div key={stat.base_stat}>{stat.base_stat} - {stat.stat.name.toUpperCase()}</div>
+            <div key={stat.stat.name}>{stat.base_stat} - {stat.stat.name.toUpperCase()}</div>
           ))}
           <h3>Moves:</h3>
           {pokemonDetails.moves.map((moveObj) => (

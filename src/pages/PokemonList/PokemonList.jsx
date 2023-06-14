@@ -21,8 +21,8 @@ const PokemonList = () => {
         <h3>Pokeomon List</h3>
         <div className="icon-container">
           {pokemon.map(pokemonTitle => 
-            <Link key={pokemonTitle.index} state={{pokemonTitle}} to='/pokemon'>
-              <div className="pokemon-div" key={pokemonTitle.index}>
+            <Link key={pokemonTitle.name} state={{pokemonTitle}} to='/pokemon'>
+              <div className="pokemon-div" key={pokemonTitle.name}>
                 {pokemonTitle.name.toUpperCase()}
               </div>
             </Link>

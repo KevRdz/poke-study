@@ -23,7 +23,7 @@ const ItemDetails = () => {
         <>
           <h3>Item Details</h3>
           <h3>{itemDetails.name?.toUpperCase()}</h3>
-          <img src="http://theoldreader.com/kittens/320/240/" alt=""/>
+          <img src={itemDetails.sprites.default} alt="item-sprite"/>
           <h4>Cost: {itemDetails.cost}P</h4>
           <h3>Effect:</h3>
           {itemDetails.effect_entries?.map((effectObj) => (

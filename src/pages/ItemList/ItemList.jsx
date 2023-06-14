@@ -21,8 +21,8 @@ const ItemList = () => {
       <>
         <div className="icon-container">
           {itemList.map(item =>
-            <div className="pokemon-div" key={item.index}>
-              <Link to="/item" state={{item}}>{item.name.toUpperCase()}</Link>
+            <div className="pokemon-div" key={item.name.idx}>
+              <Link key={item.name.idx} to="/item"  state={{item}}>{item.name.toUpperCase()}</Link>
               {/* <br /> */}
             </div>
           )}
