@@ -5,6 +5,7 @@ import PokemonList from './pages/PokemonList/PokemonList';
 import PokemonDetails from './pages/PokemonDetails/PokemonDetails';
 import ItemList from './pages/ItemList/ItemList'
 import ItemDetails from './pages/ItemDetails/ItemDetails';
+import MoveSearch from './pages/MoveSearch/MoveSearch';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/pokemon" element={<PokemonDetails />}/>
         <Route path='/item-list' element={<ItemList />}/>
         <Route path='/item' element={<ItemDetails />}/>
+        <Route path='/move-search' element={<MoveSearch />}/>
       </Routes>
     </>
   );
