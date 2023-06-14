@@ -1,11 +1,28 @@
+import { useState } from "react";
 
+const SearchForm = (props) => {
+  const [formData, setFormData] = useState({query: ''})
 
-const SearchForm = () => {
+  const handleChange = evt => {
+    setFormData({...formData, [evt.target.name]: evt.target.value})
+  }
+
+  const handleSubmit = evt => {
+    evt.preventDefault()
+    props.handleMoveSearch(formData)
+  }
+
   return (
     <>
       <div>
-        <form>
-          <input type="text" name="query" autoComplete="off" />
+        <form onSubmit={handleSubmit}>
+          <input 
+            type="text" 
+            name="query" 
+            autoComplete="off"
+            value={formData.query}
+            onChange={handleChange}
+          />
           <button type="submit">Search</button>
         </form>
       </div>
