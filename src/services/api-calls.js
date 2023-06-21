@@ -16,6 +16,6 @@ export async function getItemList() {
 }
 
 export async function moveSearch(formData) {
-  const res = await fetch(`${baseUrl}/api/move/?name=${formData.query}`)
+  const res = await fetch(`${baseUrl}/api/v2/move?name=${formData.query}`)
   return res.json()
 }
